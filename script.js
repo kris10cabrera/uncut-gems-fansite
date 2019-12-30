@@ -15,7 +15,7 @@ let currentX = null
 let currentY = null
 
 let i = 0
-const images = ['images/furbygif.gif', 'images/gem.png'].map(src => {
+const images = ['images/furbygif.gif'].map(src => {
   const image = document.createElement('img')
   image.src = src
   return image
