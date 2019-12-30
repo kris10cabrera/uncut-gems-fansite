@@ -15,7 +15,7 @@ let currentY = null
 image = document.createElement('img');
 image.src = 'images/furbygif.gif';
 
-document.addEventListener('mousemove', function(event) {
+document.addEventListener('mousemove', function (event) {
   aimX = event.pageX
   aimY = event.pageY
   if (currentX === null) {
@@ -25,7 +25,7 @@ document.addEventListener('mousemove', function(event) {
 })
 
 // for mobile 
-canvas.addEventListener('touchmove', function(event) {
+canvas.addEventListener('touchmove', function (event) {
   event.preventDefault();
   aimX = event.pageX
   aimY = event.pageY
@@ -35,26 +35,28 @@ canvas.addEventListener('touchmove', function(event) {
   }
 })
 
-const draw = function() {
+const draw = function () {
   if (currentX) {
     if (image.complete) {
-      context.drawImage(image, currentX - 100, currentY - 100, 200, 200)
+      let x = window.innerWidth > 800 ? 200 : 100;
+      let y = window.innerWidth > 800 ? 200 : 100;
+      context.drawImage(image, currentX - 100, currentY - 100, x, y)
     }
     currentX = currentX + (aimX - currentX) * 0.1;
     currentY = currentY + (aimY - currentY) * 0.1;
   }
-//   wait for the next frame and then do this again 
+  //   wait for the next frame and then do this again 
   requestAnimationFrame(draw)
 }
 
 const button = document.querySelector('#drawBegin');
 var clickCount = 0;
-button.addEventListener('click', function(event){
+button.addEventListener('click', function (event) {
   clickCount++;
   draw();
   if (clickCount > 1) {
     context.clearRect(0, 0, canvas.width, canvas.height);
   }
   button.innerHTML = 'clean gems';
-  button.style="color: white;";
+  button.style = "color: white;";
 });

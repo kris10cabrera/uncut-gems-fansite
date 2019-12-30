@@ -71,7 +71,7 @@ table {
 
 body {
   background:black;
-  color: #FF0000;
+  color: #99ff66;
   font-family: 'GT America Mono';
   font-weight: 300;
   -webkit-font-smoothing : antialiased;
@@ -95,7 +95,7 @@ a {
 
 header {
   font-size: 36px;
-  border-bottom: #FF0000 1px solid;
+  border-bottom: #99ff66 1px solid;
   position: fixed;
   top:0;
   left:0;
@@ -112,7 +112,7 @@ header {
   top: 0;
   bottom: 0;
   padding: 30px 0 30px 55px;
-  border-right: #FF0000 1px solid;
+  border-right: #99ff66 1px solid;
   background: black;
   width: 1vw;
   z-index: 2;
