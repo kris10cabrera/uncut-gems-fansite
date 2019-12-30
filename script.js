@@ -55,7 +55,7 @@ const draw = function() {
       // page location of mousemove event
       // shift over so not always from top left corner (200 & 300)
 
-      context.drawImage(images[i], currentX - 200, currentY - 200, 200, 200)
+      context.drawImage(images[i], currentX - 100, currentY - 100, 200, 200)
     }
     currentX = currentX + (aimX - currentX) * 0.1;
     currentY = currentY + (aimY - currentY) * 0.1;
