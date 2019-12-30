@@ -168,4 +168,7 @@ header {
     font-size: 30px;
     left: 66px;
   }
+  .b-canvas {
+    margin-left: 67px;
+  }
 }

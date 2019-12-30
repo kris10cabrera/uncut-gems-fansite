@@ -12,11 +12,19 @@
   <body>
     <script>
       document.fonts.ready.then(function () {
-      var text = new Blotter.Text("This is how I win.", {
-        family : "'GT America Mono', monospace",
-        size : 60,
-        fill : "#FF0000"
-      });
+      if (window.innerWidth > 800) {
+        var text = new Blotter.Text("This is how I win.", {
+          family : "'GT America Mono', monospace",
+          size : 60,
+          fill : "#FF0000"
+        });
+      } else {
+        var text = new Blotter.Text("This is how I win.", {
+          family : "'GT America Mono', monospace",
+          size : 20,
+          fill : "#FF0000"
+        });
+      }
 
       var material = new Blotter.RollingDistortMaterial();
 
