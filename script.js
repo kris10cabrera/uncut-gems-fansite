@@ -3,23 +3,17 @@ canvas.width = window.innerWidth * 2
 canvas.height = window.innerHeight * 2
 canvas.style.width = `${window.innerWidth}px`
 canvas.style.height = `${window.innerHeight}px)`
-
-// which context are we drawing things in? 2D, 3D?
 const context = canvas.getContext('2d')
 context.scale(2, 2)
 
-// slow it down :)
 let aimx = null
 let aimY = null
 let currentX = null
 let currentY = null
 
-let i = 0
-const images = ['images/furbygif.gif'].map(src => {
-  const image = document.createElement('img')
-  image.src = src
-  return image
-})
+
+image = document.createElement('img');
+image.src = 'images/furbygif.gif';
 
 document.addEventListener('mousemove', function(event) {
   aimX = event.pageX
@@ -41,21 +35,10 @@ canvas.addEventListener('touchmove', function(event) {
   }
 })
 
-canvas.addEventListener('click', function() {
-  i++
-  if (i >= images.length) {
-    i = 0
-  }
-})
-
 const draw = function() {
   if (currentX) {
-    if (images[i].complete) {
-      // on 2D context, draw! 400 width, 600 height
-      // page location of mousemove event
-      // shift over so not always from top left corner (200 & 300)
-
-      context.drawImage(images[i], currentX - 100, currentY - 100, 200, 200)
+    if (image.complete) {
+      context.drawImage(image, currentX - 100, currentY - 100, 200, 200)
     }
     currentX = currentX + (aimX - currentX) * 0.1;
     currentY = currentY + (aimY - currentY) * 0.1;
@@ -73,7 +56,5 @@ button.addEventListener('click', function(event){
     context.clearRect(0, 0, canvas.width, canvas.height);
   }
   button.innerHTML = 'clean gems';
-  button.style="background: white;";
+  button.style="color: white;";
 });
-
-// draw();
