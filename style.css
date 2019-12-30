@@ -89,6 +89,10 @@ a {
   text-decoration: none;
 }
 
+.sidebar a:hover {
+  background: white;
+}
+
 header {
   font-size: 36px;
   border-bottom: #FF0000 1px solid;
@@ -124,8 +128,8 @@ header {
 .repo {
   font-size: 15px;
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  bottom: 40px;
+  left: 15px;
   text-decoration: underline;
 }
 
@@ -185,7 +189,6 @@ header {
   }
   .repo {
     font-size: 14px;
-    bottom: 40px;
     left: 4px;
   }
 
