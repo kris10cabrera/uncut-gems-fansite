@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uncut Gems fansite 💎</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="blotter.min.js"></script>
+    <script src="rollingDistortMaterial.js"></script>
+  </head>
+  <body>
+    <script>
+      document.fonts.ready.then(function () {
+      var text = new Blotter.Text("This is how I win.", {
+        family : "'GT America Mono', monospace",
+        size : 60,
+        fill : "#FF0000"
+      });
+
+      var material = new Blotter.RollingDistortMaterial();
+
+      var blotter = new Blotter(material, { texts : text });
+
+      var scope = blotter.forText(text);
+
+      scope.appendTo(document.body);
+    });
+    </script>
+    <header>This is an <span class="tungsten">Uncut Gems</span> fansite...</header>
+    <section class="sidebar">
+      <p>made by <a href="https://twitter.com/kris10cabrera">kris10cabrera</a></p>
+    </section>
+    <a id="drawBegin">click here to cut your gems</a>
+    <canvas id="drawer"></canvas>
+    <img class="adam" src="images/adam.png" alt="Adam Sandler as Howard Ratner holding a self phone">
+
+    <script src="script.js"></script>
+  </body>
+</html>
